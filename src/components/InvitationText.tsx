@@ -16,9 +16,16 @@ export function InvitationText() {
           <h2 className="font-serif text-3xl md:text-4xl text-royal-dark">
             Assalamualaikum W.B.T & Salam Sejahtera
           </h2>
-          <p className="text-lg text-slate-700 leading-relaxed font-light">
-            Dengan penuh kesyukuran ke hadrat Ilahi, kami menjemput Dato'/Datin/Tuan/Puan ke majlis perkahwinan putera & puteri kami.
-          </p>
+          <div className="text-lg text-slate-700 leading-relaxed font-light">
+            Dengan penuh kesyukuran ke hadrat Ilahi, kami <br />
+            <span className="text-xl md:text-2xl font-serif text-royal-dark font-semibold block mt-4">Zaidi Abdul Rashid</span>
+            dan
+            <span className="text-xl md:text-2xl font-serif text-royal-dark font-semibold block mb-4">Sakinah Ibrahim</span>
+            menjemput Dato&apos;/Datin/Tuan/Puan ke majlis perkahwinan puteri kami <br />
+            <span className="text-2xl md:text-3xl font-serif text-royal-dark font-bold block mt-8 mb-2">Nurul Alia Binti Zaidi</span>
+            <span className="italic">dengan pilihan hatinya</span> <br />
+            <span className="text-2xl md:text-3xl font-serif text-royal-dark font-bold block mt-2">Muhammad Fahmi bin Hisamudin</span>
+          </div>
         </div>
 
         <div className="py-8">
