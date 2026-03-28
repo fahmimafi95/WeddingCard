@@ -10,28 +10,37 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface MusicPlayerProps {
   url: string;
-  autoPlay: boolean;
+  playing: boolean;
 }
 
-export function MusicPlayer({ url, autoPlay }: MusicPlayerProps) {
+export function MusicPlayer({ url, playing }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    if (autoPlay) {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (playing) {
       setIsPlaying(true);
     }
-  }, [autoPlay]);
+  }, [playing]);
+
+  if (!isMounted) return null;
 
   return (
     <>
-      <div className="hidden pointer-events-none opacity-0">
+      <div className="absolute top-0 left-0 w-[1px] h-[1px] opacity-0 pointer-events-none overflow-hidden">
         <ReactPlayer
           url={url}
           playing={isPlaying}
           loop={true}
-          volume={0.8}
-          width={0}
-          height={0}
+          volume={1.0}
+          muted={false}
+          playsinline={true}
+          width="100%"
+          height="100%"
           config={{
             youtube: {
               // @ts-ignore
@@ -39,7 +48,9 @@ export function MusicPlayer({ url, autoPlay }: MusicPlayerProps) {
                 autoplay: 1,
                 controls: 0,
                 rel: 0,
-                modestbranding: 1
+                modestbranding: 1,
+                playsinline: 1,
+                origin: typeof window !== "undefined" ? window.location.origin : "https://wedding-card-aliafahmi.vercel.app"
               }
             }
           }}

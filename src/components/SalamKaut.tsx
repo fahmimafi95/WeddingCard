@@ -38,11 +38,6 @@ export function SalamKaut() {
           </div>
 
         </motion.div>
-
-        <p className="mt-16 text-slate-400 text-sm font-light italic">
-          Terima kasih atas doa dan restu anda. <br />
-          Dicipta dengan ❤️ untuk hari bahagia Alia & Fahmi.
-        </p>
       </div>
     </section>
   );

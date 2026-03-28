@@ -36,12 +36,10 @@ export default function Home() {
     <main className="min-h-screen selection:bg-gold-light/30 selection:text-royal-dark">
       <OpeningOverlay isOpen={isOpened} onOpen={handleOpen} />
       
-      {isOpened && (
-        <MusicPlayer 
-          url="https://www.youtube.com/watch?v=nQgD9TM-2G0" 
-          autoPlay={true} 
-        />
-      )}
+      <MusicPlayer 
+        url="https://www.youtube.com/watch?v=nQgD9TM-2G0" 
+        playing={isOpened} 
+      />
 
       <Hero />
       <InvitationText />

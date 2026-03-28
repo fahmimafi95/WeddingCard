@@ -1,5 +1,4 @@
-"use client";
-
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MailOpen } from "lucide-react";
 
@@ -9,6 +8,14 @@ interface OpeningOverlayProps {
 }
 
 export function OpeningOverlay({ onOpen, isOpen }: OpeningOverlayProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
   return (
     <AnimatePresence>
       {!isOpen && (
