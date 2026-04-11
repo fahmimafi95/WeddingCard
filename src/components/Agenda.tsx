@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const agendaItems = [
   { time: "11.30 Pagi", desc: "Ketibaan Tetamu" },
-  { time: "12:30 Tengah Hari", desc: "Ketibaan Pengantin" },
-  { time: "1:00 Petang", desc: "Makan Beradab & Sesi Bergambar" },
+  { time: "12.00 Tengah Hari", desc: "Ketibaan Pengantin & Makan Beradab" },
+  { time: "1:00 Petang", desc: "Sesi Bergambar" },
   { time: "4:00 Petang", desc: "Majlis Bersurai" },
 ];
 

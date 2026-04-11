@@ -26,8 +26,9 @@ export function OpeningOverlay({ onOpen, isOpen }: OpeningOverlayProps) {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-royal overflow-hidden"
         >
           {/* Decorative Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-royal-light)_0%,_var(--color-royal)_100%)] opacity-80" />
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-royal-light)_0%,_var(--color-royal)_100%)] opacity-90" />
+          <div className="absolute inset-0 bg-[url('/opening-bg.png')] bg-cover bg-center opacity-40 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-royal-dark/20" />
           
           <div className="relative z-10 flex flex-col items-center text-center px-6">
             <motion.div

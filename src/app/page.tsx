@@ -37,7 +37,7 @@ export default function Home() {
       <OpeningOverlay isOpen={isOpened} onOpen={handleOpen} />
       
       <MusicPlayer 
-        url="https://www.youtube.com/watch?v=nQgD9TM-2G0" 
+        url="/BGMusic.mp3" 
         playing={isOpened} 
       />
 

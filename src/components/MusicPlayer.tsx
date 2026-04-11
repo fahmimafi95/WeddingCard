@@ -1,12 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import { useState, useEffect, useRef } from "react";
 import { Music, Music2 } from "lucide-react";
 import { motion } from "framer-motion";
-
-// Import ReactPlayer dynamically to avoid hydration issues in Next.js
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface MusicPlayerProps {
   url: string;
@@ -16,6 +12,8 @@ interface MusicPlayerProps {
 export function MusicPlayer({ url, playing }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -27,35 +25,31 @@ export function MusicPlayer({ url, playing }: MusicPlayerProps) {
     }
   }, [playing]);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        if (!hasStarted) {
+          audioRef.current.currentTime = 47;
+          setHasStarted(true);
+        }
+        audioRef.current.play().catch((err) => console.log("Audio play prevented:", err));
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlaying, hasStarted]);
+
   if (!isMounted) return null;
 
   return (
     <>
-      <div className="absolute top-0 left-0 w-[1px] h-[1px] opacity-0 pointer-events-none overflow-hidden">
-        <ReactPlayer
-          url={url}
-          playing={isPlaying}
-          loop={true}
-          volume={1.0}
-          muted={false}
-          playsinline={true}
-          width="100%"
-          height="100%"
-          config={{
-            youtube: {
-              // @ts-ignore
-              playerVars: {
-                autoplay: 1,
-                controls: 0,
-                rel: 0,
-                modestbranding: 1,
-                playsinline: 1,
-                origin: typeof window !== "undefined" ? window.location.origin : "https://wedding-card-aliafahmi.vercel.app"
-              }
-            }
-          }}
-        />
-      </div>
+      <audio
+        ref={audioRef}
+        src={url}
+        loop
+        preload="auto"
+        className="hidden"
+      />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}

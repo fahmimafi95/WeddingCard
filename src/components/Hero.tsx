@@ -6,8 +6,9 @@ export function Hero() {
   return (
     <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-royal text-slate-50">
       {/* Decorative Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-royal-light)_0%,_var(--color-royal)_100%)] opacity-80" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-60 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-royal-light)_0%,_var(--color-royal)_100%)] opacity-50" />
+      <div className="absolute inset-0 bg-royal-dark/30" />
       
       <div className="relative z-10 flex flex-col items-center text-center px-6">
         <motion.p

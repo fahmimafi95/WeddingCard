@@ -14,12 +14,7 @@ export function EventDetails() {
           transition={{ duration: 0.8 }}
           className="bg-royal-dark text-slate-50 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden"
         >
-          {/* Subtle Graphic overlay */}
-          <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none text-gold">
-             <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor">
-               <path d="M12 2L9 9H2L7 14L5 21L12 17L19 21L17 14L22 9H15L12 2Z"></path>
-             </svg>
-          </div>
+
 
           <div className="relative z-10 text-center space-y-12">
             <h2 className="text-4xl font-serif text-gold">Maklumat Majlis</h2>
