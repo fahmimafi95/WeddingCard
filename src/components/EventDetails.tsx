@@ -28,7 +28,7 @@ export function EventDetails() {
                   <div>
                     <h3 className="font-serif text-2xl text-gold-light mb-1">Tarikh & Masa</h3>
                     <p className="text-lg font-light text-slate-200">Sabtu, 6 Jun 2026</p>
-                    <p className="text-slate-400 font-light">11:00 Pagi - 4:00 Petang</p>
+                    <p className="text-slate-400 font-light">11.00 Pagi - 5.00 Petang</p>
                   </div>
                 </div>
               </div>
