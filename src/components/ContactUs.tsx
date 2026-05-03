@@ -6,7 +6,7 @@ const contacts = [
   { name: "Zaidi", phone: "+60 16-732 8604", tel: "+60167328604" },
   { name: "Sakinah", phone: "+60 16-480 4984", tel: "+60164804984" },
   { name: "Ikmal", phone: "+60 16-723 0837", tel: "+60167230837" },
-  { name: "Alia", phone: "+60 16-572 4409", tel: "+60165724409" },
+  { name: "Syuhada(Maksu)", phone: "+60 18-946 9279", tel: "+60189469279" },
 ];
 
 export function ContactUs() {
