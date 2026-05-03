@@ -95,7 +95,7 @@ export function RSVPForm() {
         >
           <div className="text-center mb-10">
             <h2 className="text-3xl font-serif text-royal-dark mb-4">Pengesahan Kehadiran</h2>
-            <p className="text-slate-500 font-light">Sila sahkan kehadiran anda sebelum 1 Mei 2026</p>
+            <p className="text-slate-500 font-light">Sila sahkan kehadiran anda sebelum 20 Mei 2026</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
